@@ -4,7 +4,7 @@ FROM php:8.2-apache
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
 # Copia la aplicación al contenedor
-COPY ../index.php /var/www/html/
+COPY index.php /var/www/html/
 
 # Establece permisos
 RUN chown -R www-data:www-data /var/www/html
