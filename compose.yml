@@ -1,6 +1,6 @@
 services:
   db:
-    image: perifulles/sqlpinacoteca:v1
+    image: perifulles/sqlpinacoteca:v2
     container_name: contenedorMiCine
     ports:
       - "3306:3306"
