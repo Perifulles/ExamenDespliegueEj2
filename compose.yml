@@ -1,6 +1,6 @@
 services:
   db:
-    image: perifulles/mi_cine:v1
+    image: perifulles/sqlpinacoteca:v1
     container_name: contenedorMiCine
     ports:
       - "3306:3306"
@@ -8,7 +8,7 @@ services:
       - mi-red
 
   app:
-    image: perifulles/mi_app_cine:v1
+    image: perifulles/phppinacoteca:v1
     container_name: contenedorMiApp
     ports:
       - "8080:80"
