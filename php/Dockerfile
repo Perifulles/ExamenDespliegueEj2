@@ -8,7 +8,7 @@ COPY index.php /var/www/html/
 
 # Establece permisos
 RUN chown -R www-data:www-data /var/www/html
-RUN chmod -R 755 /var/www/html
+RUN chmod -R 777 /var/www/html
 
 # Expone el puerto 80
 EXPOSE 80
