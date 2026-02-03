@@ -3,11 +3,9 @@
 $host = "db";
 $user = "usuario1";
 $password = "contrasenyaUsuario1";
-$database = "cine";
+$database = "Pinacoteca";
 
-
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $user, $password, $database);
 
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
