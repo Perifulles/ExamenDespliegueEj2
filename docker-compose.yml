@@ -1,19 +1,35 @@
 services:
-  web:
-    build: .
+  db:
+    image: perifulles/sqlpinacoteca:v2
+    container_name: contenedorMiCine
+    ports:
+      - "3306:3306"
+    networks:
+      - mi-red
+
+  app:
+    image: perifulles/phppinacoteca:v1
+    container_name: contenedorMiApp
     ports:
       - "8080:80"
     depends_on:
       - db
+    networks:
+      - mi-red
 
-  db:
-    image: mysql:8.0
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: contenedorPhpMyAdmin
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: Pinacoteca
-      MYSQL_USER: usuario1
-      MYSQL_PASSWORD: contrasenyaUsuario1
-    volumes:
-      - ./mysql/pinacoteca.sql:/docker-entrypoint-initdb.d/init.sql
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: contrasenyaRoot
     ports:
-      - "3306:3306"
+      - "8081:80"
+    depends_on:
+      - db
+    networks:
+      - mi-red
+
+networks:
+  mi-red:
+    driver: bridge
