@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/pinacoteca.sql" value="5a08673f-c74c-4216-8adf-c896b01e3255" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/5a08673f-c74c-4216-8adf-c896b01e3255/console.sql" value="5a08673f-c74c-4216-8adf-c896b01e3255" />
+  </component>
+</project>
